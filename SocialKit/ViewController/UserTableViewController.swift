@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AddNewUserDelegate: AnyObject {
+    func addUser(name: String, email: String)
+}
+
 class UserTableViewController: UITableViewController {
     
     private let kBaseURL = "https://jsonplaceholder.typicode.com"
@@ -16,15 +20,21 @@ class UserTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Chegou!")
+        
+        setupNavigationBar()
+        
+        loadUsers()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    fileprivate func setupNavigationBar() {
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewUser(_:)))
+        self.navigationItem.rightBarButtonItem = addButton
+    }
+    
+    fileprivate func loadUsers() {
         if let url = URL(string: "\(kBaseURL)/users") {
             let session = URLSession.shared
 
@@ -40,12 +50,12 @@ class UserTableViewController: UITableViewController {
                 }
             }
             task.resume()
-            
         }
-        
-        
     }
     
+    @objc func addNewUser(_ sender: Any) {
+        performSegue(withIdentifier: "addNewUser", sender: sender)
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
@@ -60,13 +70,7 @@ class UserTableViewController: UITableViewController {
         
         cell.user = user
         
-        //Não faça assim!
-//        if let nomeLabel = cell.viewWithTag(10) as? UILabel {
-//            nomeLabel.text = "Nome \(index)"
-//        }
-        
         return cell
-        
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -76,28 +80,44 @@ class UserTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "onUserSegue", sender: tableView.cellForRow(at: indexPath))
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier, identifier == "onUserSegue" {
-            print("Sender: \(sender ?? "não veio!")")
-            
-            if let userCell = sender as? UserTableViewCell, let user = userCell.user {
-                
-                segue.destination.title = user.name
-                
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "addNewUser":
+            segue.destination.title = "Adicionar usuário"
+            guard let destination = segue.destination as? AddUserTableViewController else {
+                return
             }
+            
+            destination.delegate = self
+        case "onUserSegue":
+            if let userCell = sender as? UserTableViewCell, let user = userCell.user {
+                segue.destination.title = user.name
+                guard let destination = segue.destination as? PostTableViewController else { return }
+                destination.user = userCell.user
+            }
+        default:
+            break
         }
     }
     
 }
 
-//Padrão de projeto Business Delegate
-
-//extension UserTableViewController: UITableViewDataSource {
-//
-//}
-//
-//extension UserTableViewController: UITableViewDelegate {
-//
-//}
+extension UserTableViewController: AddNewUserDelegate {
+    func addUser(name: String, email: String) {
+        let user = User(
+            id: self.users.count + 1,
+            name: name,
+            username: name,
+            email: email,
+            address: nil, phone: nil, website: nil, company: nil)
+        self.users.insert(user, at: 0)
+    }
+}

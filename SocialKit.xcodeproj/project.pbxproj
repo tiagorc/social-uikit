@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F83BEB7262DB6E700955EDC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F83BEB6262DB6E700955EDC /* Post.swift */; };
+		6F83BEBA262DB70500955EDC /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F83BEB9262DB70500955EDC /* UserImage.swift */; };
+		6F83BEBD262DB74E00955EDC /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F83BEBC262DB74E00955EDC /* PostTableViewController.swift */; };
+		6F83BEC0262DCBAA00955EDC /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F83BEBF262DCBAA00955EDC /* PostTableViewCell.swift */; };
+		6F83BEC9262DD29000955EDC /* AddUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F83BEC8262DD29000955EDC /* AddUserTableViewController.swift */; };
+		6FA772D6262DF2B700901B7E /* ImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA772D5262DF2B700901B7E /* ImageView+Extensions.swift */; };
+		6FA772D9262DF38800901B7E /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA772D8262DF38800901B7E /* ImageDetailViewController.swift */; };
+		6FA772DC262DF60200901B7E /* DetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA772DB262DF60200901B7E /* DetailImageTableViewCell.swift */; };
+		6FA772E3262DFFF200901B7E /* NewUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA772E2262DFFF200901B7E /* NewUserTableViewCell.swift */; };
 		EB2C0B2B262500A20034E377 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C0B2A262500A20034E377 /* AppDelegate.swift */; };
 		EB2C0B2D262500A20034E377 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C0B2C262500A20034E377 /* SceneDelegate.swift */; };
 		EB2C0B32262500A20034E377 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB2C0B30262500A20034E377 /* Main.storyboard */; };
@@ -18,6 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F83BEB6262DB6E700955EDC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		6F83BEB9262DB70500955EDC /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
+		6F83BEBC262DB74E00955EDC /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
+		6F83BEBF262DCBAA00955EDC /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		6F83BEC8262DD29000955EDC /* AddUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserTableViewController.swift; sourceTree = "<group>"; };
+		6FA772D5262DF2B700901B7E /* ImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extensions.swift"; sourceTree = "<group>"; };
+		6FA772D8262DF38800901B7E /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		6FA772DB262DF60200901B7E /* DetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageTableViewCell.swift; sourceTree = "<group>"; };
+		6FA772E2262DFFF200901B7E /* NewUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserTableViewCell.swift; sourceTree = "<group>"; };
 		EB2C0B27262500A20034E377 /* SocialKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2C0B2A262500A20034E377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB2C0B2C262500A20034E377 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +59,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F83BEC6262DD26600955EDC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6F83BEBC262DB74E00955EDC /* PostTableViewController.swift */,
+				EB2C0B44262508240034E377 /* UserTableViewController.swift */,
+				6F83BEC8262DD29000955EDC /* AddUserTableViewController.swift */,
+				6FA772D8262DF38800901B7E /* ImageDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6F83BEC7262DD27100955EDC /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				6FA772E2262DFFF200901B7E /* NewUserTableViewCell.swift */,
+				EB2C0B4726250ED50034E377 /* UserTableViewCell.swift */,
+				6F83BEBF262DCBAA00955EDC /* PostTableViewCell.swift */,
+				6FA772DB262DF60200901B7E /* DetailImageTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		EB2C0B1E262500A20034E377 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +100,8 @@
 		EB2C0B29262500A20034E377 /* SocialKit */ = {
 			isa = PBXGroup;
 			children = (
+				6F83BEC7262DD27100955EDC /* CustomCells */,
+				6F83BEC6262DD26600955EDC /* ViewController */,
 				EB2C0B3F2625030A0034E377 /* Model */,
 				EB2C0B2A262500A20034E377 /* AppDelegate.swift */,
 				EB2C0B2C262500A20034E377 /* SceneDelegate.swift */,
@@ -67,8 +109,7 @@
 				EB2C0B33262500A40034E377 /* Assets.xcassets */,
 				EB2C0B35262500A40034E377 /* LaunchScreen.storyboard */,
 				EB2C0B38262500A40034E377 /* Info.plist */,
-				EB2C0B44262508240034E377 /* UserTableViewController.swift */,
-				EB2C0B4726250ED50034E377 /* UserTableViewCell.swift */,
+				6FA772D5262DF2B700901B7E /* ImageView+Extensions.swift */,
 			);
 			path = SocialKit;
 			sourceTree = "<group>";
@@ -77,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				EB2C0B40262503250034E377 /* User.swift */,
+				6F83BEB6262DB6E700955EDC /* Post.swift */,
+				6F83BEB9262DB70500955EDC /* UserImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,11 +194,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F83BEC9262DD29000955EDC /* AddUserTableViewController.swift in Sources */,
+				6FA772D9262DF38800901B7E /* ImageDetailViewController.swift in Sources */,
 				EB2C0B41262503250034E377 /* User.swift in Sources */,
 				EB2C0B2B262500A20034E377 /* AppDelegate.swift in Sources */,
 				EB2C0B45262508240034E377 /* UserTableViewController.swift in Sources */,
+				6F83BEBA262DB70500955EDC /* UserImage.swift in Sources */,
+				6F83BEB7262DB6E700955EDC /* Post.swift in Sources */,
+				6F83BEBD262DB74E00955EDC /* PostTableViewController.swift in Sources */,
 				EB2C0B2D262500A20034E377 /* SceneDelegate.swift in Sources */,
+				6FA772DC262DF60200901B7E /* DetailImageTableViewCell.swift in Sources */,
 				EB2C0B4826250ED50034E377 /* UserTableViewCell.swift in Sources */,
+				6FA772E3262DFFF200901B7E /* NewUserTableViewCell.swift in Sources */,
+				6FA772D6262DF2B700901B7E /* ImageView+Extensions.swift in Sources */,
+				6F83BEC0262DCBAA00955EDC /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,13 +355,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RRNNBMBSXJ;
+				DEVELOPMENT_TEAM = TWDG99C44U;
 				INFOPLIST_FILE = SocialKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.iesb.2019-2.SocialKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.euler.carvalho.SocialKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,13 +374,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RRNNBMBSXJ;
+				DEVELOPMENT_TEAM = TWDG99C44U;
 				INFOPLIST_FILE = SocialKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.iesb.2019-2.SocialKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.euler.carvalho.SocialKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
